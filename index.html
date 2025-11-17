@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sri Viyug - Transform Your Future</title>
+        <!-- Using Inter font for a modern look (or fallback to system defaults) -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         /* General Reset and Base Styles */
         * {
@@ -511,33 +513,43 @@
 
 
 
-<div class="item-section2">
 
+
+    
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CRITICAL: Ensures the viewport scales correctly to the device width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Feature Section</title>
+    <!-- Adding a modern font and linking the necessary CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            
+            font-family: 'Inter', sans-serif;
         }
-.item-section2{
-    background: #e8f0fe;
-}
-       
+        .item-section2{
+            background: #e8f0fe;
+        }
 
-        /* Main Section */
+        /* Main Section - Desktop styles preserved (max-width prevents overstretching) */
         .about-section {
             padding: 5rem 2rem;
             text-align: center;
             max-width: 1200px;
             margin: 0 auto;
-           
         }
 
-        /* Top Badge */
+        /* Top Badge - Uses flex-wrap to prevent overflow on narrow screens */
         .about-section .top-badge {
-            display: inline-flex;
+            display: flex;
             align-items: center;
+            justify-content: center;
+            flex-wrap: wrap; 
             gap: 0.75rem;
             color: #1e5fc6;
             font-size: 0.875rem;
@@ -552,13 +564,16 @@
             font-size: 1.2rem;
         }
 
-        /* Main Heading */
+        /* Main Heading - Desktop font size: 3.5rem (PRESERVED) */
         .about-section h1 {
             font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.2;
             color: #1a1a1a;
             margin-bottom: 1.5rem;
+            /* Safety measure to prevent any word from breaking the layout */
+            overflow-wrap: break-word; 
+            word-break: break-word;
         }
 
         .about-section .highlight {
@@ -575,7 +590,7 @@
             margin: 0 auto 3rem;
         }
 
-        /* Features Grid */
+        /* Features Grid - Uses auto-fit/minmax for fluid desktop/tablet layout */
         .about-section .features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -625,14 +640,15 @@
             text-align: left;
         }
 
-        /* Responsive */
+        /* Responsive Breakpoints - Tighter font control for mobile */
         @media (max-width: 768px) {
             .about-section {
                 padding: 3rem 1.5rem;
             }
 
             .about-section h1 {
-                font-size: 2.2rem;
+                /* Reduced to 2rem for mid-size screens (e.g., tablet portrait) */
+                font-size: 2rem; 
             }
 
             .about-section .description {
@@ -645,8 +661,13 @@
         }
 
         @media (max-width: 480px) {
+            .about-section {
+                padding: 2rem 1rem;
+            }
+            
             .about-section h1 {
-                font-size: 1.8rem;
+                /* Aggressively reduced to 1.6rem to ensure it fits the narrowest phone screens without clipping */
+                font-size: 1.6rem; 
             }
 
             .about-section .top-badge {
@@ -655,73 +676,72 @@
         }
     </style>
 
-    <section class="about-section">
-        <!-- Top Badge -->
-        <div class="top-badge">
-            <span class="sparkle">✨</span>
-            EXCELLENCE IN EVERY ENDEAVOR
-            <span class="sparkle">✨</span>
-        </div>
-
-        <!-- Main Heading -->
-        <h1>
-            Where Business Success Meets
-            <span class="highlight">Personal Transformation</span>
-        </h1>
-
-        <!-- Description -->
-        <p class="description">
-            Sri Viyug represents a commitment to transformational growth, operational 
-            excellence, and human potential. We bridge corporate success with individual 
-            achievement through proven methodologies and compassionate guidance.
-        </p>
-
-        <!-- Features Grid -->
-        <div class="features">
-            <!-- Certified Excellence -->
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
-                </div>
-                <span class="feature-text">Certified Excellence</span>
+    <div class="item-section2">
+        <section class="about-section">
+            <!-- Top Badge -->
+            <div class="top-badge">
+                <span class="sparkle">✨</span>
+                EXCELLENCE IN EVERY ENDEAVOR
+                <span class="sparkle">✨</span>
             </div>
 
-            <!-- Compassionate Approach -->
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                    </svg>
+            <!-- Main Heading -->
+            <h1>
+                Where Business Success Meets
+                <span class="highlight">Personal Transformation</span>
+            </h1>
+
+            <!-- Description -->
+            <p class="description">
+                Sri Viyug represents a commitment to transformational growth, operational 
+                excellence, and human potential. We bridge corporate success with individual 
+                achievement through proven methodologies and compassionate guidance.
+            </p>
+
+            <!-- Features Grid -->
+            <div class="features">
+                <!-- Certified Excellence -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                    </div>
+                    <span class="feature-text">Certified Excellence</span>
                 </div>
-                <span class="feature-text">Compassionate Approach</span>
-            </div>
 
-            <!-- Result-Driven -->
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-                    </svg>
+                <!-- Compassionate Approach -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </div>
+                    <span class="feature-text">Compassionate Approach</span>
                 </div>
-                <span class="feature-text">Result-Driven</span>
-            </div>
 
-            <!-- Pan-India Presence -->
-            <div class="feature-card">
-                <div class="feature-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                <!-- Result-Driven -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                        </svg>
+                    </div>
+                    <span class="feature-text">Result-Driven</span>
                 </div>
-                <span class="feature-text">Pan-India Presence</span>
+
+                <!-- Pan-India Presence -->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </div>
+                    <span class="feature-text">Pan-India Presence</span>
+                </div>
             </div>
-        </div>
-    </section>
-</div>
-
-
+        </section>
+    </div>
 
 
 
